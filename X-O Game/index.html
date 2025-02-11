@@ -1,64 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لعبة X-O</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./images/logo.jpg">
-</head>
-<body>
-    <div class="container">
-        <h1> (X _ O) </h1>
-        
-        <!-- اختيار وضع اللعب -->
-        <div id="modeSelection">
-            <button onclick="selectMode('single')">لعب فردي ضد البوت 🤖</button>
-            <button onclick="selectMode('multi')">لعب جماعي مع صديق 👥</button>
-        </div>
-
-        <!-- إدخال أسماء اللاعبين -->
-        <div id="playerForm" class="hidden">
-            <input type="text" id="playerX" placeholder="اسم اللاعب (❌)">
-            <div id="playerOField" class="hidden">
-                <input type="text" id="playerO" placeholder="اسم اللاعب (⭕️)">
-            </div>
-
-            <!-- تحديد مستوى الصعوبة عند اختيار البوت -->
-            <div id="difficultySelection" class="hidden">
-                <label for="difficulty">اختر مستوى الصعوبة:</label>
-                <select id="difficulty">
-                    <option value="easy">سهل 🎲</option>
-                    <option value="medium">متوسط 🏆</option>
-                    <option value="hard">صعب 💡</option>
-                </select>
-            </div>
-
-            <button onclick="startGame()">ابدأ اللعبة</button>
-        </div>
-
-        <!-- لوحة اللعبة -->
-        <div id="gameBoard" class="hidden">
-            <p id="turnInfo"></p>
-            <div class="board">
-                <div class="cell" onclick="makeMove(0)"></div>
-                <div class="cell" onclick="makeMove(1)"></div>
-                <div class="cell" onclick="makeMove(2)"></div>
-                <div class="cell" onclick="makeMove(3)"></div>
-                <div class="cell" onclick="makeMove(4)"></div>
-                <div class="cell" onclick="makeMove(5)"></div>
-                <div class="cell" onclick="makeMove(6)"></div>
-                <div class="cell" onclick="makeMove(7)"></div>
-                <div class="cell" onclick="makeMove(8)"></div>
-            </div>
-            <p id="winner"></p>
-            <button onclick="resetGame()">إعادة اللعب 🔄</button>
-        </div>
-    </div>
-    <footer>
-        &copy; 2025 Sherwood. All rights reserved.
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
